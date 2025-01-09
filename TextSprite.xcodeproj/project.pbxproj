@@ -27,6 +27,7 @@
 		18148CAA2D2FB36500C470D3 /* Debug.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18148CA82D2FB36500C470D3 /* Debug.swift */; };
 		18148CAC2D2FB3DD00C470D3 /* CGPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18148CAB2D2FB3DD00C470D3 /* CGPoint.swift */; };
 		18148CAE2D2FD25D00C470D3 /* SlidMenuContentControllerNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18148CAD2D2FD25D00C470D3 /* SlidMenuContentControllerNode.swift */; };
+		18148CB22D2FD9EC00C470D3 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18148CB12D2FD9EC00C470D3 /* File.swift */; };
 		18E7FE6E2D26799300B1967F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18E7FE6D2D26799300B1967F /* Assets.xcassets */; };
 		18E7FE712D26799300B1967F /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 18E7FE702D26799300B1967F /* Base */; };
 		FFFC22FFD0F9C53AA0D6ADFC /* Pods_TextSprite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7799A31B5AAE4ACD4CE889F /* Pods_TextSprite.framework */; };
@@ -53,6 +54,7 @@
 		18148CA82D2FB36500C470D3 /* Debug.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Debug.swift; sourceTree = "<group>"; };
 		18148CAB2D2FB3DD00C470D3 /* CGPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGPoint.swift; sourceTree = "<group>"; };
 		18148CAD2D2FD25D00C470D3 /* SlidMenuContentControllerNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlidMenuContentControllerNode.swift; sourceTree = "<group>"; };
+		18148CB12D2FD9EC00C470D3 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		18E7FE612D26798F00B1967F /* TextSprite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TextSprite.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18E7FE6D2D26799300B1967F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		18E7FE702D26799300B1967F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -169,6 +171,22 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		18148CAF2D2FD9D800C470D3 /* File */ = {
+			isa = PBXGroup;
+			children = (
+				18148CB12D2FD9EC00C470D3 /* File.swift */,
+			);
+			path = File;
+			sourceTree = "<group>";
+		};
+		18148CB02D2FD9D800C470D3 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				18148CAF2D2FD9D800C470D3 /* File */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
 		18E7FE582D26798F00B1967F = {
 			isa = PBXGroup;
 			children = (
@@ -190,6 +208,7 @@
 		18E7FE632D26798F00B1967F /* TextSprite */ = {
 			isa = PBXGroup;
 			children = (
+				18148CB02D2FD9D800C470D3 /* Core */,
 				18148CA92D2FB36500C470D3 /* Utils */,
 				18148B712D2D378600C470D3 /* AccountContext */,
 				18148B682D2D325F00C470D3 /* PresentationData */,
@@ -342,6 +361,7 @@
 				18148B622D2D2F6600C470D3 /* BaseController.swift in Sources */,
 				18148B602D2D2F4400C470D3 /* SlidMenuContentController.swift in Sources */,
 				18148CAA2D2FB36500C470D3 /* Debug.swift in Sources */,
+				18148CB22D2FD9EC00C470D3 /* File.swift in Sources */,
 				18148B5E2D2D2EC600C470D3 /* SlideMenuRootController.swift in Sources */,
 				18148B6E2D2D369200C470D3 /* DefaultDayPresentationTheme.swift in Sources */,
 				18148C822D2E789300C470D3 /* BaseDisplayNode.swift in Sources */,

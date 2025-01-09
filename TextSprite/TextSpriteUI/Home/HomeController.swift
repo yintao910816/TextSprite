@@ -5,10 +5,21 @@
 //  Created by apple on 2025/1/7.
 //
 
+import UniformTypeIdentifiers
+
 import TGSubmodoules
 import SwiftSignalKitTG
 
+struct HomeControllerInteraction {
+    let testAction: ()->()
+    
+    init(testAction: @escaping () -> Void) {
+        self.testAction = testAction
+    }
+}
+
 public class HomeController: BaseController {
+    private var interaction: HomeControllerInteraction?
     
     private var controllerNode: HomeControllerNode {
         return self.displayNode as! HomeControllerNode
@@ -16,6 +27,10 @@ public class HomeController: BaseController {
 
     public override init(context: any AccountContext, navigationBarParameters: NavigationBarParameters?) {
         super.init(context: context, navigationBarParameters: navigationBarParameters)
+        
+        self.interaction = HomeControllerInteraction(testAction: { [weak self] in
+            self?.openSystemFile()
+        })
     }
     
     required init(coder aDecoder: NSCoder) {
@@ -23,13 +38,49 @@ public class HomeController: BaseController {
     }
     
     public override func loadDisplayNode() {
-        self.displayNode = HomeControllerNode()
+        self.displayNode = HomeControllerNode(context: self.context, presentationData: self.presentationData, interaction: self.interaction!)
         self.displayNode.view.backgroundColor = .white
         self.displayNodeDidLoad()
     }
     
     public override func containerLayoutUpdated(_ layout: ContainerViewLayout, transition: ContainedViewLayoutTransition) {
-       print(layout)
+        super.containerLayoutUpdated(layout, transition: transition)
+        self.controllerNode.containerLayoutUpdated(layout, navigationHeight: 0, transition: transition)
     }
 }
 
+extension HomeController: UIDocumentPickerDelegate {
+    
+    private func openSystemFile() {
+        // 创建文件选择器，只允许选择 .txt 文件
+        let documentPicker: UIDocumentPickerViewController
+        if #available(iOS 14.0, *) {
+            documentPicker = UIDocumentPickerViewController(forOpeningContentTypes: [.plainText])
+        } else {
+            documentPicker = UIDocumentPickerViewController(documentTypes: ["public.plain-text"], in: .import)
+        }
+        documentPicker.delegate = self
+        documentPicker.allowsMultipleSelection = false
+        self.present(documentPicker, animated: true, completion: nil)
+    }
+    
+    // MARK: - UIDocumentPickerDelegate
+    public func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
+        guard let selectedFileURL = urls.first else { return }
+        
+        if selectedFileURL.startAccessingSecurityScopedResource() {
+            defer { selectedFileURL.stopAccessingSecurityScopedResource() }
+            do {
+                let file = SystemFile(selectedFileURL)
+                debugPrint("读取文件：\(file)")
+            }
+        } else {
+            print("无法访问选定的文件资源")
+        }
+    }
+
+    public func documentPickerWasCancelled(_ controller: UIDocumentPickerViewController) {
+        print("用户取消了文件选择")
+    }
+
+}
