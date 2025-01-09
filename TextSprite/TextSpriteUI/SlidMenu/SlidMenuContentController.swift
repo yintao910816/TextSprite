@@ -29,7 +29,7 @@ public class SlidMenuContentController: BaseController {
     }
     
     public override func containerLayoutUpdated(_ layout: ContainerViewLayout, transition: ContainedViewLayoutTransition) {
-       print(layout)
+        super.containerLayoutUpdated(layout, transition: transition)
     }
 }
 
