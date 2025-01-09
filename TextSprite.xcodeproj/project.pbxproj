@@ -26,6 +26,7 @@
 		18148C822D2E789300C470D3 /* BaseDisplayNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18148C812D2E789300C470D3 /* BaseDisplayNode.swift */; };
 		18148CAA2D2FB36500C470D3 /* Debug.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18148CA82D2FB36500C470D3 /* Debug.swift */; };
 		18148CAC2D2FB3DD00C470D3 /* CGPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18148CAB2D2FB3DD00C470D3 /* CGPoint.swift */; };
+		18148CAE2D2FD25D00C470D3 /* SlidMenuContentControllerNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18148CAD2D2FD25D00C470D3 /* SlidMenuContentControllerNode.swift */; };
 		18E7FE6E2D26799300B1967F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18E7FE6D2D26799300B1967F /* Assets.xcassets */; };
 		18E7FE712D26799300B1967F /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 18E7FE702D26799300B1967F /* Base */; };
 		FFFC22FFD0F9C53AA0D6ADFC /* Pods_TextSprite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7799A31B5AAE4ACD4CE889F /* Pods_TextSprite.framework */; };
@@ -51,6 +52,7 @@
 		18148C812D2E789300C470D3 /* BaseDisplayNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseDisplayNode.swift; sourceTree = "<group>"; };
 		18148CA82D2FB36500C470D3 /* Debug.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Debug.swift; sourceTree = "<group>"; };
 		18148CAB2D2FB3DD00C470D3 /* CGPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGPoint.swift; sourceTree = "<group>"; };
+		18148CAD2D2FD25D00C470D3 /* SlidMenuContentControllerNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlidMenuContentControllerNode.swift; sourceTree = "<group>"; };
 		18E7FE612D26798F00B1967F /* TextSprite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TextSprite.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18E7FE6D2D26799300B1967F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		18E7FE702D26799300B1967F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				18148B5D2D2D2EC600C470D3 /* SlideMenuRootController.swift */,
 				18148C5F2D2E779D00C470D3 /* SlideMenuRootControllerNode.swift */,
 				18148B5F2D2D2F4400C470D3 /* SlidMenuContentController.swift */,
+				18148CAD2D2FD25D00C470D3 /* SlidMenuContentControllerNode.swift */,
 				18148B632D2D30A500C470D3 /* SlidMenuDetailContentController.swift */,
 			);
 			path = SlidMenu;
@@ -327,6 +330,7 @@
 				18148B692D2D325F00C470D3 /* ComponentsThemes.swift in Sources */,
 				18148B752D2D380700C470D3 /* AccountContextImpl.swift in Sources */,
 				18148B782D2D450000C470D3 /* HomeController.swift in Sources */,
+				18148CAE2D2FD25D00C470D3 /* SlidMenuContentControllerNode.swift in Sources */,
 				18148B732D2D37A800C470D3 /* AccountContext.swift in Sources */,
 				18148B592D2D2BBA00C470D3 /* AppDelegate.swift in Sources */,
 				18148B6B2D2D325F00C470D3 /* PresentationTheme.swift in Sources */,

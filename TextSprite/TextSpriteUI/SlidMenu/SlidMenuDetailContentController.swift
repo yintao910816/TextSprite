@@ -19,9 +19,5 @@ public class SlidMenuDetailContentController: RootNavigationController {
     
     public func setContent(_ viewController: ViewController) {
         self.viewControllers = [viewController]
-    }
-    
-//    public override func containerLayoutUpdated(_ layout: ContainerViewLayout, transition: ContainedViewLayoutTransition) {
-//        super.containerLayoutUpdated(layout, transition: transition)
-//    }
+    }    
 }

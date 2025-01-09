@@ -24,7 +24,7 @@ public class HomeController: BaseController {
     
     public override func loadDisplayNode() {
         self.displayNode = HomeControllerNode()
-        self.displayNode.view.backgroundColor = .blue
+        self.displayNode.view.backgroundColor = .white
         self.displayNodeDidLoad()
     }
     

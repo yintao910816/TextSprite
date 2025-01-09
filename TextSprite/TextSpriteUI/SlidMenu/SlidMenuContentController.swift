@@ -23,16 +23,12 @@ public class SlidMenuContentController: BaseController {
     }
     
     public override func loadDisplayNode() {
-        self.displayNode = SlidMenuContentControllerNode()
-        self.displayNode.backgroundColor = .red
+        self.displayNode = SlidMenuContentControllerNode(context: self.context, presentationData: self.presentationData)
+        self.displayNode.backgroundColor = .lightGray
         self.displayNodeDidLoad()
     }
     
     public override func containerLayoutUpdated(_ layout: ContainerViewLayout, transition: ContainedViewLayoutTransition) {
         super.containerLayoutUpdated(layout, transition: transition)
     }
-}
-
-private class SlidMenuContentControllerNode: ASDisplayNode {
-    
 }

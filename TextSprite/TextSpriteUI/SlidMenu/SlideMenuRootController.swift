@@ -61,7 +61,6 @@ public class SlideMenuRootController: BaseController {
         
     public override func loadDisplayNode() {
         self.displayNode = SlideMenuRootControllerNode(context: self.context, presentationData: self.presentationData, interaction: self.interaction)
-        self.displayNode.view.backgroundColor = .blue
         self.displayNodeDidLoad()
     }
     
