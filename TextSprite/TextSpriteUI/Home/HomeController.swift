@@ -31,6 +31,14 @@ public class HomeController: BaseController {
         self.interaction = HomeControllerInteraction(testAction: { [weak self] in
             self?.openSystemFile()
         })
+        
+        _ = FileDownload.selectAll()
+            .start(next: { rs in
+                if let first = rs.first as? FileDownload {
+                    readAndSplitTextFile(fileURL: first.destinationURL)
+                }
+            })
+        
     }
     
     required init(coder aDecoder: NSCoder) {
@@ -73,10 +81,18 @@ extension HomeController: UIDocumentPickerDelegate {
             do {
                 let file = SystemFile(selectedFileURL)
                 debugPrint("读取文件：\(file)")
+                file.matchesChapter()
+
+//                let fileContents = try String(contentsOf: selectedFileURL, encoding: .utf8)
+//                print("文件内容:\n\(fileContents)")
+            } catch {
+                print("读取文件失败: \(error)")
             }
         } else {
             print("无法访问选定的文件资源")
         }
+        
+        guard let selectedFileURL = urls.first else { return }
     }
 
     public func documentPickerWasCancelled(_ controller: UIDocumentPickerViewController) {

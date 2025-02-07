@@ -19,6 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
+        ClientDatabaseInstance.connectionDataBase()
+        ClientDatabaseInstance.setupTables()
+        
         self.statusBarHost = ApplicationStatusBarHost()
         let (window, hostView) = nativeWindowHostView()
         self.mainWindow = Window1(hostView: hostView, statusBarHost: statusBarHost)

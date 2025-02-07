@@ -53,6 +53,10 @@ public class SlideMenuRootController: BaseController {
         self.view.addSubview(self.detailContentController.view)
         
         self.detailContentController.setContent(HomeController(context: context, navigationBarParameters: nil))
+        
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+//            self.detailContentController.setContent(WebController(context: context, navigationBarParameters: nil))
+//        })
     }
             
     required init(coder aDecoder: NSCoder) {
